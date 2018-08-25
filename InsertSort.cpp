@@ -1,3 +1,7 @@
+/*
+*直接插入排序:空间复杂度 O(1),时间复杂度 O(n^2).
+*适用于顺序存储和链式存储的线性表,是一个稳定的排序方法.
+*/
 #include<iostream>
 using namespace std;
 
