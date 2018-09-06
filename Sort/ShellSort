@@ -1,0 +1,44 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+void swap(int&a,int&b){
+	int tmp = b;
+	b = a;
+	a = tmp;
+}
+void ShellSort(vector<int> A){
+	int dk,i,j;
+	for(dk = A.size()/2;dk>0;dk/=2){
+		for(i=dk;i<A.size();i++){
+			for(j=i-dk;j>=0&&A[j]>A[j+dk];j-=dk){
+				cout<<A[j]<<">"<<A[j+dk]<<endl;
+				swap(A[j],A[j+dk]);
+				cout<<A[j]<<">"<<A[j+dk]<<endl;
+				cout<<"*"<<endl;
+			}
+		}
+		
+	}
+	for(int i =0;i<A.size();i++){
+		cout<<A[i]<<" ";
+	}
+}
+
+int main(int argc, char const *argv[])
+{
+	vector<int> v;
+	v.push_back(4);
+	v.push_back(41);
+	v.push_back(23);
+	v.push_back(76);
+	v.push_back(17);
+	v.push_back(28);
+	v.push_back(66);
+	v.push_back(41);
+	v.push_back(10);
+
+	ShellSort(v);
+
+	return 0;
+}
